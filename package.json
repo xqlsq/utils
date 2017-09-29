@@ -1,0 +1,22 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "个人小工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xqlsq/utils.git"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "徐博",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xqlsq/utils/issues"
+  },
+  "homepage": "https://github.com/xqlsq/utils#readme"
+}
