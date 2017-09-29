@@ -1,0 +1,17 @@
+{
+  "name": "fetch",
+  "version": "1.0.0",
+  "description": "fetch",
+  "main": "index.js",
+  "scripts": {
+    "service": "node ./api.js"
+  },
+  "keywords": [
+    "fetch"
+  ],
+  "author": "徐博",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.0"
+  }
+}
