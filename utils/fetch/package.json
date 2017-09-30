@@ -4,6 +4,7 @@
   "description": "fetch",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --inline  --host localhost --port 9093 --config ../../webpack.config.dev.js",
     "service": "node ./api.js"
   },
   "keywords": [
@@ -11,7 +12,8 @@
   ],
   "author": "徐博",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.0"
+  "devDependencies": {
+    "express": "^4.16.0",
+    "webpack-dev-server": "^2.4.2"
   }
 }
