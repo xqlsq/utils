@@ -5,7 +5,7 @@ window.onload = function(){
 	  headers:{
         // 'Content-Type': 'application/x-www-form-urlencoded',
         // 'X-Request-With': null
-        'X-Request-With': 'XHR'
+        'X-Request-With': 'null'
       },
       body:'topic_id=54d2de4cfbf1e531447acc95&accesstoken=4f215614-a0e2-42bd-b015-656d3eca19dd'
     })
