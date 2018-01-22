@@ -14,8 +14,6 @@
   "author": "徐博",
   "license": "ISC",
   "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "express": "^4.16.0",
     "webpack-dev-server": "^2.4.2"
   }
 }

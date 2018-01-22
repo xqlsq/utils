@@ -20,11 +20,11 @@ module.exports = {
       template: 'index.html',
     }),
   ],
-
+  devtool: 'source-map',
   module: {
     loaders: [
       {test: /\.(css|less)$/,loader: 'style-loader!css-loader!less-loader',},
-      {test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015!eslint-loader?configFile=.eslintrc' },
+      {test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel-loader!eslint-loader?configFile=.eslintrc' },
       {test: /\.(png|jpg|gif|jepg)$/, loader: 'url-loader?limit=8192' },
       {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,loader: "url-loader?limit=10000&mimetype=application/font-woff"},
       {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,loader: "url-loader?limit=10000&mimetype=application/octet-stream"},
