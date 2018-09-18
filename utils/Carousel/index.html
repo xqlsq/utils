@@ -1,62 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-        .dp_ib{
+        .dp_ib {
             display: inline-block;
         }
-        .ws_nw{
+
+        .ws_nw {
             white-space: nowrap;
         }
+
         .ps_ab {
             position: absolute;
         }
-        .fs_0{
+
+        .fs_0 {
             font-size: 0;
         }
-        .mg_auto{
+
+        .mg_auto {
             margin: 0 auto;
         }
+
         .w_fc {
             width: fit-content;
         }
+
         .ps_rl {
             position: relative;
         }
-        .container{
+
+        .container {
             width: 160px;
             height: 100px;
             overflow: hidden;
             user-select: none;
         }
-        .container>div{
+
+        .container>div {
             width: 100%;
             height: 100%;
         }
-        span{
+
+        span {
             text-align: center;
             line-height: 100px;
             font-size: 40px;
             color: red;
-            left: 0;right: 0;top: 0;bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
         }
-        img{
+
+        img {
             vertical-align: bottom;
             width: 100%;
             height: 100%;
         }
+
         .handlelist {
-            left: 0;right: 0;top: 0;bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
         }
+
         .handle {
             width: 50%;
             height: 100%;
-            background: rgba(0,0,0,.3);
+            background: rgba(0, 0, 0, .3);
         }
     </style>
 </head>
+
 <body>
     <div class="fs_0 ps_rl w_fc mg_auto">
         <div class="container ps_rl ws_nw dp_ib">
@@ -107,46 +127,49 @@
         var progress = 0; // 记录当前时间已经移动的距离
         var canHandle = false; // 移动过程禁止操作
         var time = 300; // 动画持续时间（可配置项）
-        var container =  document.getElementsByClassName('container')[0];
+        var container = document.getElementsByClassName('container')[0];
         var list = document.getElementsByClassName('ws_nw')[0];
         var width = container.offsetWidth; // 容器宽度
         var scrollX = width; // 容器横向滚动距离
         container.scrollTo(scrollX, 0);
+
         function step() {
-            progress+=moveStep;
+            progress += moveStep;
             if ((distance - progress > 0 && distance > 0) || (distance - progress < 0 && distance < 0)) {
-                container.scrollTo(scrollX+progress, 0);
+                container.scrollTo(scrollX + progress, 0);
                 requestAnimationFrame(step);
             } else {
                 progress = 0;
-                container.scrollTo(scrollX+distance, 0);
+                container.scrollTo(scrollX + distance, 0);
                 canHandle = false;
             }
         }
+
         function slider(n) {
-            if(canHandle) {
+            if (canHandle) {
                 return;
             }
             canHandle = true;
-            distance = n*width;
-            moveStep = Math.round(distance*100 / Math.round(time / (100/6)))/100;
+            distance = n * width;
+            moveStep = Math.round(distance * 100 / Math.round(time / (100 / 6))) / 100;
             var i = 0;
             if (n > 0) {
-                while(i < n) {
+                while (i < n) {
                     list.appendChild(list.firstElementChild);
                     i++;
                 }
-                
+
             } else {
-                while(i < -n) {
+                while (i < -n) {
                     list.insertBefore(list.lastElementChild, list.firstElementChild);
                     i++;
                 }
             }
-            scrollX = width*(1-n);
+            scrollX = width * (1 - n);
             container.scrollTo(scrollX, 0);
             requestAnimationFrame(step);
         }
     </script>
 </body>
+
 </html>
